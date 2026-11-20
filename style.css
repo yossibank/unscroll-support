@@ -1,0 +1,284 @@
+:root {
+  --bg: #fbf7ee;
+  --card: #ffffff;
+  --line: #e4ece9;
+  --text: #1f3a3d;
+  --sub: #6e7f7c;
+  --accent: #1f5f5e;
+  --accent-light: #2f8a86;
+  --soft: #e1f1ee;
+  --coral: #f2836b;
+  --shadow: 0 8px 24px rgba(31, 95, 94, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* 頭の帯 */
+
+.hero {
+  background: linear-gradient(160deg, #fdf0dc 0%, #f9c9a8 50%, #9fd4cc 100%);
+  text-align: center;
+  padding: 56px 20px 72px;
+  border-radius: 0 0 40px 40px;
+}
+
+.hero.small {
+  padding: 40px 20px 48px;
+}
+
+.hero img {
+  width: 88px;
+  height: 88px;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(31, 58, 61, 0.25);
+}
+
+.hero h1 {
+  font-size: 30px;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  margin: 16px 0 4px;
+}
+
+.hero p {
+  color: var(--accent);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+}
+
+/* 入口の 2 つのボタン */
+
+.shortcuts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: -36px;
+}
+
+.shortcuts a {
+  display: block;
+  background: var(--card);
+  border-radius: 20px;
+  padding: 20px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s;
+}
+
+.shortcuts a:hover {
+  transform: translateY(-2px);
+}
+
+.shortcuts .mark {
+  font-size: 26px;
+}
+
+.shortcuts .label {
+  display: block;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.shortcuts .note {
+  display: block;
+  font-size: 13px;
+  color: var(--sub);
+}
+
+/* 見出し */
+
+h2 {
+  color: var(--accent);
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  margin: 48px 0 16px;
+}
+
+/* よくある質問 */
+
+.faq {
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.faq details + details {
+  border-top: 1px solid var(--line);
+}
+
+.faq summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  margin-left: auto;
+  color: var(--accent);
+  font-size: 22px;
+  font-weight: 400;
+  transition: transform 0.2s;
+}
+
+.faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq .icon {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: var(--soft);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+.faq .answer {
+  padding: 0 20px 18px 68px;
+  color: var(--text);
+}
+
+.faq .answer ul {
+  padding-left: 1.2em;
+  margin: 8px 0 0;
+}
+
+/* お問い合わせ */
+
+.contact {
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  text-align: center;
+}
+
+.contact .hints {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0 20px;
+}
+
+.contact .hints span {
+  background: var(--soft);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 13px;
+}
+
+.button {
+  display: inline-block;
+  background: linear-gradient(180deg, var(--accent-light), var(--accent));
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 36px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 6px 16px rgba(31, 95, 94, 0.3);
+}
+
+/* プライバシーポリシー */
+
+.summary {
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 20px 24px;
+  margin-top: -28px;
+}
+
+.summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.summary li {
+  padding: 6px 0;
+}
+
+.summary li::before {
+  content: "✓";
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.policy section {
+  border-left: 3px solid var(--coral);
+  padding: 2px 0 2px 16px;
+  margin: 0 0 8px;
+}
+
+.policy h2 {
+  margin-top: 36px;
+}
+
+.date {
+  color: var(--sub);
+  font-size: 14px;
+  margin-top: 32px;
+}
+
+/* 下の帯 */
+
+footer {
+  text-align: center;
+  color: var(--sub);
+  font-size: 13px;
+  padding: 32px 20px 48px;
+}
+
+footer a {
+  color: var(--sub);
+  margin: 0 8px;
+}
+
+@media (max-width: 420px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .faq .answer {
+    padding-left: 20px;
+  }
+}
